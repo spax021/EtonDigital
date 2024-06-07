@@ -3,29 +3,32 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.ITestContext;
 import org.testng.annotations.BeforeMethod;
 
+import config.PropertiesFile;
 import pages.BasePage;
 
-public class BaseTest {
+public class BaseTest  {
 
-	private WebDriver webDriver;
+	protected static WebDriver webDriver;
 	private ChromeOptions option;
 	protected BasePage basePage;
 
 	@BeforeMethod
-	public void lounchApplication() {
+	public void lounchApplication(ITestContext context) {
 		setChromeDriverProperty();
 
 		webDriver = new ChromeDriver();
-
+		context.setAttribute("driver", webDriver);
+		
 		basePage = new BasePage();
 		basePage.setWebDriver(webDriver);
 
 		webDriver.manage().deleteAllCookies();
 		webDriver.manage().deleteCookieNamed("sessionKey");
 		webDriver.manage().window().maximize();
-		webDriver.get( "https://storabble:ed2023@st.storabble.etondigital.com/en/login"); 
+		webDriver.get( "https://" + PropertiesFile.getBasicAuth() + PropertiesFile.getBaseUrl()); 
 
 	}
 

@@ -5,10 +5,13 @@
     <classes>
       <class name="tests.LoginTest">
         <methods>
-          <include name="setUp"/>
+          <include name="TestBruteForce"/>
           <include name="lounchApplication"/>
-          <include name="TestSuccessfullLogin"/>
+          <include name="setUp"/>
+          <include name="TestValidLogin"/>
           <include name="tearDown"/>
+          <include name="TestCSRFProtection"/>
+          <include name="TestSecureCookies"/>
         </methods>
       </class> <!-- tests.LoginTest -->
     </classes>
