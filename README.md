@@ -174,7 +174,6 @@ To thoroughly test the login process of the Storabble platform to ensure that us
   3. Check the cookies for secure and HttpOnly attributes.
 - **Expected Result:** Cookies should be marked as secure and HttpOnly.
 
-
 ### Bugs Found:
 
 #### **Bug ID:** 001
@@ -186,7 +185,7 @@ To thoroughly test the login process of the Storabble platform to ensure that us
   3. Click on the login button.
 - **Expected Result:** User is redirected to ‘My storage listings’ page with all elements properly loaded.
 - **Actual Result:** User is redirected to a light blue page with no elements displayed.
-- **Note** Found with automation, if I delete "?page=1" from URL and click enter, page loads successfully
+- **Note:** Found with automation, if I delete "?page=1" from URL and click enter, page loads successfully. Screenshot added to Bug Screenshot folder
 
 #### **Bug ID:** 002
 - **Severity:** Medium
@@ -198,6 +197,7 @@ To thoroughly test the login process of the Storabble platform to ensure that us
   4. Click on the login button.
 - **Expected Result:** Error message indicating that the email is incorrect.
 - **Actual Result:** Error message incorrectly indicates that the password is also incorrect.
+- **Note:** Screenshot added to Bug Screenshot folder
 
 #### **Bug ID:** 003
 - **Severity:** Medium
@@ -209,6 +209,7 @@ To thoroughly test the login process of the Storabble platform to ensure that us
   4. Click on the login button.
 - **Expected Result:** Error message indicating that the password is incorrect.
 - **Actual Result:** Error message incorrectly indicates that the email is also incorrect.
+- **Note:** Screenshot added to Bug Screenshot folder
 
 #### **Bug ID:** 004
 - **Severity:** Critical
@@ -221,8 +222,7 @@ To thoroughly test the login process of the Storabble platform to ensure that us
 - **Expected Result:** Password should be hashed or encrypted before being sent over the network.
 - **Actual Result:** Password is sent in plaintext.
 - **Recommendation:** Implement client-side hashing or encryption before sending the password to the server.
-
-
+- **Note:** Screenshot added to Bug Screenshot folder
 
 #### **NOTE**
 - Not sure for bug 2 and 3, maybe it is by design. Keeping in mind GDPR regulations, it might be that we are hidding which element specificaly is incorect therefore both messages are visible
